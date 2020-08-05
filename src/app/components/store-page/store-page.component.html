@@ -1,0 +1,22 @@
+<h1>Online Jce Store</h1>
+
+    <mat-accordion>
+        <mat-expansion-panel *ngFor = "let drug of data$ | async">
+                <mat-expansion-panel-header>
+                        <mat-panel-title> 
+                             <b>Medication name: </b>  {{drug.drugName}}     
+                        </mat-panel-title>
+                </mat-expansion-panel-header> 
+                <b>Infoemation:</b> {{drug.description}}
+                <br>
+                <b>Price:</b> {{drug.price}}
+               <br><br>
+        <div>
+            <button mat-raised-button color="primary" (click)="addMedicatios(drug.drugName,drug.description,drug.price)">Add to cart</button>
+        </div>
+    
+        </mat-expansion-panel>
+        <span *ngIf="hasError">{{errorMessage}} please try another search</span>
+    </mat-accordion>
+
+

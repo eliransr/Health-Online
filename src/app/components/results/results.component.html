@@ -1,0 +1,17 @@
+<mat-card class="example-card">
+    <mat-card-header>
+      <div mat-card-avatar *ngIf = "categoryImage">
+        <img [src] = "categoryImage">
+     </div>
+      <mat-card-title>{{category}}</mat-card-title>
+      <mat-card-subtitle>Diagnosis result</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{diagnosisserviceService.doc}}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" routerLink="/store-page" >Go to store</button>
+    </mat-card-actions>
+  </mat-card>

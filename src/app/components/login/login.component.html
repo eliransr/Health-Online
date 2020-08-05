@@ -1,0 +1,28 @@
+<h2>Welcome, to enter please login your details</h2>
+<form #login="ngForm"(ngSubmit)="onSubmit()">
+
+  <div class="example-container">     
+    <mat-form-field>
+    <input type = "email" matInput placeholder="Enter your email" [(ngModel)] = "email"
+    name = "email">
+    </mat-form-field>
+    <div class = "err">
+    {{Emailmassage}}
+    </div>
+</div> 
+
+    <div class="example-container">
+      <mat-form-field>
+       <input [type]="hide ? 'password' : 'text'" matInput placeholder="Enter your password" [(ngModel)]= "password"
+      name="password"> 
+
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class = "err">
+    {{passwordmassage}}
+    </div>
+    <button mat-raised-button color="primary" [disabled]>Login</button>
+    </form>

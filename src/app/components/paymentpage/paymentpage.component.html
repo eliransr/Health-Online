@@ -1,0 +1,65 @@
+<form class="example-form" (ngSubmit)="submit()">
+
+    <h1>Medication name: {{drugName}}</h1>
+
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>First name</mat-label>
+        <input type = "text" matInput
+        [(ngModel)] = "firstName"
+        name="firstName">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Last name</mat-label>
+        <input type = "text" matInput  
+        [(ngModel)] = "lastName"
+        name="lastName">
+      </mat-form-field></td>
+    </tr></table>
+  
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Address</mat-label>
+        <input type = "text" matInput placeholder="Ex. 100 Main St"
+        [(ngModel)] = "address"
+        name="address">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Address 2</mat-label>
+        <textarea type = "text" matInput></textarea>
+        <mat-hint align="start" style="color:blue;"><strong>Field not requierd </strong> </mat-hint>
+      </mat-form-field>
+    </p>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>City</mat-label>
+        <input type = "text" matInput placeholder="Ex. San Francisco"
+        [(ngModel)] = "city"
+        name="city">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>State</mat-label>
+        <input type = "text" matInput placeholder="Ex. California">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Postal Code</mat-label>
+        <input type = "number" matInput #postalCode maxlength="5" placeholder="Ex. 94105">
+        <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+      </mat-form-field></td>
+    </tr></table>
+
+    <mat-form-field class="example-full-width" >
+        <mat-label>Credit card number</mat-label>
+        <input type = "number" matInput #Code maxlength="16" placeholder="0000-0000-0000-0000"
+        [(ngModel)] = "card"
+        name = "card">
+        <mat-hint><strong>please insert number between 8-16 digits</strong> </mat-hint>
+        <mat-hint align="end">{{Code.value.length}} / 16</mat-hint>
+      </mat-form-field>
+<br><br>
+    <h2> Total Amount: {{drugPrice}}</h2>
+    <button mat-raised-button color="accent">Buy</button>
+
+  </form>

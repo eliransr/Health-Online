@@ -1,0 +1,38 @@
+.example-card {
+    max-width: 100%;
+  }
+  
+  .example-header-image {
+    background-size: cover;
+  }
+  
+  .serv{
+      padding-left: 10px;
+  }
+  
+  #card1{
+    padding-top: 15px;
+  }
+
+  .card2{
+    padding-top: 15px;
+  }
+
+  .card3{
+    padding-top: 15px;
+  }
+
+  .CancelBtn{
+      padding-left: 15px;
+      display: inline;
+  }
+
+  .SearchBtn{
+    display: inline;
+}
+
+mat-form-field {
+    margin-right: 12px;
+    width:100%;
+  }
+ 

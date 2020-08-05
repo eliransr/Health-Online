@@ -1,0 +1,41 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+.sidenav .mat-toolbar {
+  background: inherit;
+}
+
+.mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.whitelink {
+  color:white;
+  text-decoration: none;
+  cursor:pointer;
+  margin-right:10px;
+}
+
+.example-card {
+  max-width: 70px;
+  margin-right:10px;
+  border-radius: 10rem;
+} 
+.name{
+  margin-left:15px;
+}
+.welcomeText{
+  text-align:center;
+}
+

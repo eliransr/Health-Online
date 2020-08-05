@@ -1,0 +1,96 @@
+<br>
+<form #editForm="ngForm" (ngSubmit)="onsubmit()">
+    <mat-card-header>
+        <!-- <div mat-card-avatar class="example-header-image"></div> -->
+        <h1>Edit your appointment</h1>
+      </mat-card-header>
+
+      <div class="card1">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>Which doctor would you like to find?</mat-card-title>
+              <mat-icon  aria-label="Example local_hospital icon">local_hospital</mat-icon>
+            </mat-card-header>
+            <mat-card-content>
+              <mat-select [(value)]="category">
+                <mat-option value="{{appointmentsService.categories[0]}}">{{appointmentsService.categories[0]}}</mat-option>
+                <mat-option value="{{appointmentsService.categories[1]}}">{{appointmentsService.categories[1]}}</mat-option>
+                <mat-option value="{{appointmentsService.categories[2]}}">{{appointmentsService.categories[2]}}</mat-option>
+                <mat-option value="{{appointmentsService.categories[3]}}">{{appointmentsService.categories[3]}}</mat-option>
+            </mat-select>
+            </mat-card-content>
+          </mat-card>
+      </div>
+     
+      <div class = "card2">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>What is the treatment requested</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <div class="find_doctor">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Type of treatment</mat-label>
+                        <input 
+                        [(ngModel)]= "typeOfTreatment"
+                        name = "typeOfTreatment"
+                        type = "text" matInput placeholder="Type of treatment">
+                      </mat-form-field>
+                </div>
+            </mat-card-content>
+          </mat-card>
+      </div>
+
+      <div class="card3">
+        <mat-card class="example-card">
+            <mat-card-header>
+              <!-- <div mat-card-avatar class="example-header-image"></div> -->
+              <mat-card-title>Where & When you are comfortable</mat-card-title>
+              <mat-icon  aria-label="Example location_on icon">location_on</mat-icon>
+            </mat-card-header>
+            <mat-card-content>
+                <div>
+                    <mat-form-field matTooltip="Choose date for create an appointment MM/DD/YYYY" 
+                    [matTooltipPosition]="position.value"
+                    matTooltipHideDelay="3000"
+                    aria-label appearance="outline">
+                        <mat-label>Choose date</mat-label>
+                        <input
+                        [(ngModel)]= "date"
+                        name = "date"
+                        type = "date" matInput placeholder="Choose date">
+                    </mat-form-field>
+                </div>
+                <div class="find_doctor">
+                  <mat-form-field appearance="outline">
+                      <mat-label>Time</mat-label>
+                      <input 
+                      [(ngModel)]= "time"
+                      name = "time"
+                      type = "time" matInput placeholder="Time">
+                    </mat-form-field>
+              </div>
+              <div class="find_doctor">
+                <mat-form-field appearance="outline">
+                    <mat-label>City</mat-label>
+                    <input 
+                    [(ngModel)]= "city"
+                    name = "city"
+                    type = "text" matInput placeholder="City">
+                  </mat-form-field>
+            </div>
+            </mat-card-content>
+          </mat-card>
+      </div>
+     
+<br>
+        <div class = "SearchBtn">
+            <button mat-raised-button color="primary">Update Appointment</button>
+        </div>
+        <div class = "CancelBtn">
+          <button mat-raised-button [routerLink]="'/future'">Cancel</button>
+        </div>
+
+</form>

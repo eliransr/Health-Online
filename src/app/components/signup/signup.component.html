@@ -1,0 +1,27 @@
+<h2>Welcome please enter your details down below</h2>
+<form #signUp="ngForm"(ngSubmit)="signupBtn()">
+
+  <div class="example-container">
+    <mat-form-field>
+   <input matInput placeholder="Enter your full name" [(ngModel)]= "fullname"
+          name="fullname"> 
+    </mat-form-field>
+  </div>
+
+  <div class="example-container">
+    <mat-form-field>
+    <input matInput placeholder="Enter your email" [(ngModel)]= "email"
+            name="email"> 
+    </mat-form-field>
+    </div>
+    
+    <div class="example-container">
+      <mat-form-field>
+      <input  matInput placeholder="Enter your password" [(ngModel)]= "password"
+              name="password"> 
+      </mat-form-field>
+      </div>
+
+      <br>  
+        <button mat-raised-button color="primary" [disabled]>Sign Up</button>
+    </form>

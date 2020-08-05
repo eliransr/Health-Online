@@ -1,0 +1,53 @@
+.docform{
+    display: inline-block;
+    margin-left:30%;
+  margin-top: 0%;
+  }
+  
+.main {
+  display: inline-block;
+  vertical-align: top;
+  margin-top:6%;
+  text-align: center;
+  margin-left:70px;
+}
+.noRes{
+  margin-top:60 px;
+}
+.red{
+  margin-top: 3%;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  color: red;
+}
+.errorMsg{
+  color: red;
+}
+.simires{
+  margin-top: 1%;
+  color: blue;
+}
+.noRestxt{
+  margin-top: 2%;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}
+.refreshbtn{
+  margin-top: 2%;
+  margin-left: 45%;
+}
+.resData{
+  margin-top: 4%;
+  margin-left: 40%;
+}
+.picture{
+  display: inline-block;
+}
+.pictureSucess{
+  display: inline-block;
+}
+.pictureUnSucess{
+  margin-left: 28%;
+}

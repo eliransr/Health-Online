@@ -1,0 +1,21 @@
+<mat-card>
+    <h1>Patient diagnosis </h1>
+    <form #diagnosisForm="ngForm" (ngSubmit)="onSubmit()">
+      <div class="example-container">
+        <mat-form-field appearance="outline" style="width: 400px;">
+            <textarea
+                matInput placeholder="Diagnosis"
+                [(ngModel)] = "text"
+                name="text"
+                cdkTextareaAutosize
+                cdkAutosizeMinRows="10"
+                cdkAutosizeMaxRows="20"                           
+            >
+            </textarea>     
+        </mat-form-field>                  
+        <div >
+            <button mat-raised-button color="primary">Diagnosis</button>
+        </div>
+      </div>
+    </form>
+    </mat-card>

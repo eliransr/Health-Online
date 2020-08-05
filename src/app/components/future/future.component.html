@@ -1,0 +1,29 @@
+  <mat-card-header>
+    <h1>List your queues</h1>
+  </mat-card-header>
+  
+  
+<p *ngIf = "!(appointment$ | async)">Loding...</p>
+
+<mat-accordion>
+    <mat-expansion-panel *ngFor = "let appointment of appointment$ | async">
+      <mat-expansion-panel-header>
+        <mat-panel-title>  
+       
+        <b> Doctor Name:</b> {{appointment.field_treatment}}
+        </mat-panel-title>
+       
+      </mat-expansion-panel-header>
+      <h2>Details:</h2>
+      <h3> <b>Date:</b>{{appointment.date}}<br>
+      <b>Treatment requested:</b> {{appointment.treatment_requested}}<br>
+      <b>City location:</b> {{appointment.city}}<br>
+      <b>Time:</b> {{appointment.time}}
+     <br></h3>
+     <button mat-raised-button color="warn" (click)=deleteAppointment(appointment.id)>Cancel Appointment</button>
+     <div class="btn">
+      <button mat-raised-button color="primary" [routerLink]="'/editform/' + appointment.id">Edit Appointment</button>
+     </div>
+
+    </mat-expansion-panel>
+  </mat-accordion>

@@ -1,0 +1,20 @@
+<h2>Your Cart<mat-icon  aria-label="Example shopping_cart icon">shopping_cart</mat-icon> </h2> 
+<mat-accordion>
+    <mat-expansion-panel *ngFor = "let drug of data$ | async">
+            <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        <b>Medication name: </b> {{drug.name}} 
+                    </mat-panel-title>
+            </mat-expansion-panel-header> 
+            <b>Infoemation:</b> {{drug.description}}
+            <br>
+             <b>Price:</b> {{drug.price}}
+            
+    <br><br>
+            <button mat-raised-button color="accent" routerLink="/paymentpage/{{drug.name}}/{{drug.price}}" routerLinkActive="active">Go Check out</button>
+    <div class="btn">
+        <button  mat-raised-button color="warn" (click)="deleteDrug(drug.id)">Cancel order</button> &nbsp;&nbsp;
+    </div>
+
+    </mat-expansion-panel>
+</mat-accordion>

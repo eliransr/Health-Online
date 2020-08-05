@@ -1,0 +1,49 @@
+<div *ngIf="!doctor">
+  <div class="docform">
+
+    <div class="picture">
+      <img src="../assets/medical-doctors.jpg">
+    </div>
+
+    <div class="main">
+      <h1><b>Please upload picture of a Doctor</b></h1>
+      <input (change)="onFilePicked($event)" class="custom-file-input" placeholder="Upload File" type="file" />
+      <button (click)="onFileUpload()" class="myButton">Upload File</button>
+      <p class="errorMsg" *ngIf="errorMsg"><b> Please Select A File</b></p>
+    </div>
+
+  </div>
+</div>
+
+<div *ngIf="doctor">
+
+  <div *ngIf="doctor.similarity">
+
+    <div class="resData">
+      
+      <div class="pictureSucess">
+        <img src="../assets/resultDoc.jpg">
+      </div>
+      
+
+      <h3 class = "simires"><b>Similarity Result</b> </h3>
+      <p> <b>Name:</b> {{doctor.user_name}} <br><b>Similarity
+          Percent:</b> <b style= "color:green" > {{doctor.similarity}} </b> <b style= "color:green">%</b> <br> <b>Specialization:</b>{{doctor.specialization}} <br>
+        <b>Location:</b>
+        {{doctor.Location}} <br> <b>Seniority:</b> {{doctor.seniority}} </p>
+    </div>
+
+  </div>
+
+  <div class="noRes" *ngIf="!doctor.similarity">
+    
+    <div class="pictureUnSucess">
+      <img src="../assets/Faildpic.jpg">
+    </div>
+    <p class="red"><b>No recognized</b></p>
+    <p class="noRestxt">Doctor does not exist in the database, are you sure you are in the right place?</p>
+  </div>
+  <button class="refreshbtn" (click)="refresh()">Try again</button>
+
+
+</div>

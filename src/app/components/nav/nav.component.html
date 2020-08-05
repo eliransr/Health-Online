@@ -1,0 +1,40 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false" *ngIf = "(authService.user | async)?.uid">
+      <br>
+      <h2 class="welcomeText">Welcome</h2>
+      <b><p class="name" style="color: cornflowerblue;">{{useremail}}</p></b>
+      <hr>
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item href="appointments" routerLinkActive="active">Appointments<mat-icon  aria-label="Example schedule icon">schedule</mat-icon></a>
+      <a mat-list-item href="future" routerLinkActive="active">Your future queues<mat-icon  aria-label="Example event icon">event</mat-icon></a>
+      <a mat-list-item href="diagnosis">Medical diagnosis<mat-icon  aria-label="Example scatter_plot icon">scatter_plot</mat-icon></a>
+      <a mat-list-item href="store-page">Store of medicines  <mat-icon  aria-label="Example store icon">store</mat-icon></a>
+      <a mat-list-item href="cart-page">Your Cart <mat-icon  aria-label="Example shopping_cart icon">shopping_cart</mat-icon></a>
+      <a mat-list-item href="recognitiondoctor">Recognition doctor <mat-icon  aria-label="Example face icon">face</mat-icon></a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <img class="example-card" mat-card-image src="https://firebasestorage.googleapis.com/v0/b/health-project-66c4d.appspot.com/o/jce.jpg?alt=media&token=9ddfadd7-7125-47d6-a255-463e5e50150a">
+      <span>Jce - Health Online </span>
+      <span class = "spacer"> </span>
+        <a class="whitelink" [routerLink]="['/signup']" *ngIf = "!(authService.user | async)?.uid">Sign Up</a>
+        <a class="whitelink" [routerLink]="['/login']" *ngIf = "!(authService.user | async)?.uid">Login</a>
+        <a class ="whitelink" *ngIf = "(authService.user | async)?.uid" (click) = "authService.Logout()">Logout</a>
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,26 @@
+.example-card {
+    max-width: 100%;
+  }
+  
+  .card2{
+    padding-top: 15px;
+  }
+
+  .card3{
+    padding-top: 15px;
+  }
+
+  .CancelBtn{
+      padding-left: 15px;
+      display: inline;
+  }
+
+  .SearchBtn{
+    display: inline;
+}
+
+mat-form-field {
+    margin-right: 12px;
+    width:100%;
+  }
+ 

@@ -1,0 +1,53 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .example-right-align {
+    text-align: right;
+  }
+  
+  input.example-right-align::-webkit-outer-spin-button,
+  input.example-right-align::-webkit-inner-spin-button {
+    display: none;
+  }
+  
+  input.example-right-align {
+    -moz-appearance: textfield;
+    
+  }
+  .alert {
+    padding: 20px;
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .closebtn {
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+
+  h3{
+      text-align: center;
+  }
+
+  .err{
+      color: red;
+      font-size: 15px;
+      margin-top: 10px;
+  }
